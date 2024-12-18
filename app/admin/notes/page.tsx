@@ -4,7 +4,7 @@
 // import { useSession } from 'next-auth/react';
 // import axios from 'axios';
 
-// export default function AdminNotes() {
+export default function AdminNotes() {
 //   const { data: session } = useSession();
 //   const [note, setNote] = useState({ title: '', content: '' });
 
@@ -18,7 +18,7 @@
 //     return <p>You must be logged in to post notes.</p>;
 //   }
 
-//   return (
+  return (<div>Hello</div>)}
 //     <form onSubmit={handleSubmit}>
 //       <input
 //         type="text"

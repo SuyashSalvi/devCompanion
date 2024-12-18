@@ -1,10 +1,10 @@
-// "use client";
+"use client";
 
 // import { useState, FormEvent } from "react";
 // import { useSession } from "next-auth/react";
 // import axios from "axios";
 
-// export default function AdminLeetCode() {
+export default function AdminLeetCode() {
 //   const { data: session, status } = useSession();
 //   const [post, setPost] = useState({
 //     problem: "",
@@ -47,7 +47,7 @@
 //     return <p>You need to be logged in to access this page.</p>;
 //   }
 
-//   return (
+  return (<div>Hello</div>)}
 //     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 sm:p-20">
 //       <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">
 //         Add a New LeetCode Problem
