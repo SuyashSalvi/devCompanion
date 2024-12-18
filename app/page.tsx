@@ -5,32 +5,32 @@ import axios from "axios";
 import Link from "next/link";
 import { quotes } from "@/utils/quotes";
 
-interface Note {
-  _id: string;
-  title: string;
-  content: string;
-}
+// interface Note {
+//   _id: string;
+//   title: string;
+//   content: string;
+// }
 
-interface LeetCodePost {
-  _id: string;
-  problem: string;
-  solution: string;
-  approach: string;
-  timeComplexity: string;
-  spaceComplexity: string;
-  leetCodeLink: string;
-}
+// interface LeetCodePost {
+//   _id: string;
+//   problem: string;
+//   solution: string;
+//   approach: string;
+//   timeComplexity: string;
+//   spaceComplexity: string;
+//   leetCodeLink: string;
+// }
 
 export default function Home() {
-  const [notes, setNotes] = useState<Note[]>([]);
-  const [leetcodePosts, setLeetCodePosts] = useState<LeetCodePost[]>([]);
+  // const [notes, setNotes] = useState<Note[]>([]);
+  // const [leetcodePosts, setLeetCodePosts] = useState<LeetCodePost[]>([]);
 
   // Randomly select a quote
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
   useEffect(() => {
-    axios.get("/api/notes").then((res) => setNotes(res.data));
-    axios.get("/api/leetcode").then((res) => setLeetCodePosts(res.data));
+    // axios.get("/api/notes").then((res) => setNotes(res.data));
+    // axios.get("/api/leetcode").then((res) => setLeetCodePosts(res.data));
   }, []);
 
   return (
