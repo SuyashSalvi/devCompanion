@@ -1,11 +1,21 @@
 "use client";
 
-import { useState, FormEvent } from 'react';
+import { useEffect, useState, FormEvent } from 'react';
 import { useSession } from 'next-auth/react';
 import axios from 'axios';
 
 export default function AdminLeetCode() {
   const { data: session } = useSession();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (session) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [session]);
+
   const [post, setPost] = useState({
     problem: '',
     solution: '',
@@ -28,8 +38,8 @@ export default function AdminLeetCode() {
     });
   };
 
-  if (!session) {
-    return <p>You must be logged in to post LeetCode problems.</p>;
+  if (!isLoggedIn) {
+    return <p>You need to be logged in to access this page.</p>;
   }
 
   return (
