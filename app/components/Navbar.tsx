@@ -12,7 +12,7 @@ export default function Navbar() {
   const [text, setText] = useState("");
   const fullText = "DevCompanion";
   const [isDeleting, setIsDeleting] = useState(false);
-  const [loop, setLoop] = useState(0);
+//   const [loop, setLoop] = useState(0);
   const typingSpeed = isDeleting ? 50 : 150; // Speed for typing and deleting
 
   // Handle theme toggle
@@ -47,7 +47,7 @@ export default function Navbar() {
         setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
-        setLoop((l) => l + 1); // Restart typing loop
+        // setLoop((l) => l + 1); // Restart typing loop
       }
     };
 
