@@ -47,13 +47,13 @@ export default function Navbar() {
         setTimeout(() => setIsDeleting(true), 1000); // Pause before deleting
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
-        setLoop(loop + 1); // Restart typing loop
+        setLoop((l) => l + 1); // Restart typing loop
       }
     };
 
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [text, isDeleting]);
+  }, [text, isDeleting,typingSpeed]);
 
   return (
     <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg shadow-lg rounded-full z-50 px-6 py-3 flex justify-between items-center">
