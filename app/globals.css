@@ -2,20 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light and Dark Mode Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #4f46e5; /* Primary accent color */
+  --muted: #9ca3af; /* Muted text color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent: #818cf8; /* Slightly lighter accent for dark mode */
+    --muted: #6b7280; /* Muted text color for dark mode */
   }
+}
+
+/* Global Styling */
+html {
+  @apply transition-colors duration-300; /* Smooth transition between light and dark modes */
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: none; /* Hides the default mouse pointer */
 }
+
+/* Links */
+a {
+  @apply text-[var(--accent)] hover:underline;
+  cursor: none; /* Ensures interactive elements don't revert to the default pointer */
+}
+
+button {
+  cursor: none; /* Ensures interactive elements don't revert to the default pointer */
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-[var(--foreground)];
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg text-white bg-[var(--accent)] hover:bg-opacity-80 transition-all;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg text-[var(--foreground)] border border-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all;
+}
+
+/* Cards */
+.card {
+  @apply p-6 rounded-lg shadow-md bg-white dark:bg-gray-800 text-[var(--foreground)] transition-shadow hover:shadow-lg;
+}
+
+/* Utility Classes for Light/Dark Mode Testing */
+.light-mode {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.dark-mode {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+
+.blinking-cursor {
+  display: inline-block;
+  /* width: 1px; */
+  background: currentColor;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
