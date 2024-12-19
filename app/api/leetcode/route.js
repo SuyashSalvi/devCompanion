@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import dbConnect from '@/utils/dbConnect';
 import LeetCodePost from '@/models/LeetCodePost';
 
