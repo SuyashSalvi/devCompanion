@@ -73,36 +73,41 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Notes Box */}
           <Link href="/notes">
-            <div className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+            <div className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer h-60">
               <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 rounded-2xl transition-all"></div>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-blue-500 transition-all duration-300">
-                📚 Notes
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all">
-                Dive into technical notes on AWS, System Design, and much more.
-              </p>
-              <div className="mt-4 text-blue-500 font-semibold group-hover:underline">
-                View Notes →
+              <div className="flex flex-col justify-center h-full">
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-blue-500 transition-all duration-300">
+                  📚 Notes
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all">
+                  Dive into technical notes on AWS, System Design, and much more.
+                </p>
+                <div className="mt-4 text-blue-500 font-semibold group-hover:underline">
+                  View Notes →
+                </div>
               </div>
             </div>
           </Link>
 
           {/* LeetCode Solutions Box */}
           <Link href="/leetcode">
-            <div className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer">
+            <div className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer h-60">
               <div className="absolute inset-0 bg-green-500 opacity-0 group-hover:opacity-10 rounded-2xl transition-all"></div>
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-green-500 transition-all duration-300">
-                💻 LeetCode Solutions
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all">
-                Discover LeetCode problems with solutions, approaches, and complexities.
-              </p>
-              <div className="mt-4 text-green-500 font-semibold group-hover:underline">
-                View Solutions →
+              <div className="flex flex-col justify-center h-full">
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-green-500 transition-all duration-300">
+                  💻 LeetCode Solutions
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-all">
+                  Discover LeetCode problems with solutions, approaches, and complexities.
+                </p>
+                <div className="mt-4 text-green-500 font-semibold group-hover:underline">
+                  View Solutions →
+                </div>
               </div>
             </div>
           </Link>
         </div>
+
 
       {/* Fun Fact or Inspirational Quote Section */}
       <section className="flex flex-col items-center justify-center bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-2xl p-8 shadow-lg border border-gray-300 dark:border-gray-700">

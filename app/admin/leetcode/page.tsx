@@ -1,166 +1,41 @@
-"use client";
+import AdminLeetCodeForm from '@/app/components/AdminLeetCodeForm'; // Client-side component
 
-// import { useState, FormEvent } from "react";
-// import { useSession } from "next-auth/react";
-// import axios from "axios";
+export default function AdminLeetCodePage() {
+  return (
+    <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 overflow-hidden">
+       {/* Abstract Patterned Background */}
+        <div className="absolute inset-0 -z-10 h-screen w-full">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full opacity-30"
+            preserveAspectRatio="xMidYMid slice"
+            viewBox="0 0 100 100"
+            >
+            <circle cx="20" cy="30" r="10" fill="#1D4ED8" />
+            <circle cx="80" cy="50" r="15" fill="#6D28D9" />
+            <rect x="10" y="70" width="12" height="12" fill="#10B981" />
+            <path d="M60 30 L70 50 L50 50 Z" fill="#F59E0B" />
+            <circle cx="50" cy="20" r="8" fill="#3B82F6" />
+            </svg>
+        </div>
 
-export default function AdminLeetCode() {
-//   const { data: session, status } = useSession();
-//   const [post, setPost] = useState({
-//     problem: "",
-//     solution: "",
-//     approach: "",
-//     timeComplexity: "",
-//     spaceComplexity: "",
-//     leetCodeLink: "",
-//   });
-//   const [successMessage, setSuccessMessage] = useState("");
-//   const [errorMessage, setErrorMessage] = useState("");
+      {/* Page Content */}
+      <div className=" container mx-auto p-6 pt-24">
+        {/* Section Header */}
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 dark:text-white mb-2">
+            Post Daily LeetCode Problem
+          </h1>
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+            Share your LeetCode problems with approaches, solutions, and complexities for easy documentation and sharing.
+          </p>
+        </div>
 
-//   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-
-//     try {
-//       await axios.post("/api/leetcode", post);
-//       setSuccessMessage("LeetCode problem added successfully!");
-//       setErrorMessage(""); // Clear any previous errors
-//       setPost({
-//         problem: "",
-//         solution: "",
-//         approach: "",
-//         timeComplexity: "",
-//         spaceComplexity: "",
-//         leetCodeLink: "",
-//       });
-//     } catch (error) {
-//       setErrorMessage("Failed to post the LeetCode problem. Please try again.");
-//     }
-//   };
-
-//   // If user session is not loaded yet
-//   if (status === "loading") {
-//     return <p>Loading...</p>;
-//   }
-
-//   // If user is not logged in
-//   if (!session) {
-//     return <p>You need to be logged in to access this page.</p>;
-//   }
-
-  return (<div>Hello</div>)}
-//     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8 sm:p-20">
-//       <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-//         Add a New LeetCode Problem
-//       </h1>
-
-//       <form
-//         onSubmit={handleSubmit}
-//         className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 space-y-4"
-//       >
-//         <div>
-//           <label htmlFor="problem" className="block font-medium text-gray-700 dark:text-gray-300">
-//             Problem Title
-//           </label>
-//           <input
-//             id="problem"
-//             type="text"
-//             value={post.problem}
-//             onChange={(e) => setPost({ ...post, problem: e.target.value })}
-//             required
-//             className="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
-//           />
-//         </div>
-
-//         <div>
-//           <label htmlFor="solution" className="block font-medium text-gray-700 dark:text-gray-300">
-//             Solution
-//           </label>
-//           <textarea
-//             id="solution"
-//             value={post.solution}
-//             onChange={(e) => setPost({ ...post, solution: e.target.value })}
-//             required
-//             className="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
-//           />
-//         </div>
-
-//         <div>
-//           <label htmlFor="approach" className="block font-medium text-gray-700 dark:text-gray-300">
-//             Approach
-//           </label>
-//           <textarea
-//             id="approach"
-//             value={post.approach}
-//             onChange={(e) => setPost({ ...post, approach: e.target.value })}
-//             required
-//             className="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
-//           />
-//         </div>
-
-//         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-//           <div>
-//             <label
-//               htmlFor="timeComplexity"
-//               className="block font-medium text-gray-700 dark:text-gray-300"
-//             >
-//               Time Complexity
-//             </label>
-//             <input
-//               id="timeComplexity"
-//               type="text"
-//               value={post.timeComplexity}
-//               onChange={(e) => setPost({ ...post, timeComplexity: e.target.value })}
-//               required
-//               className="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
-//             />
-//           </div>
-
-//           <div>
-//             <label
-//               htmlFor="spaceComplexity"
-//               className="block font-medium text-gray-700 dark:text-gray-300"
-//             >
-//               Space Complexity
-//             </label>
-//             <input
-//               id="spaceComplexity"
-//               type="text"
-//               value={post.spaceComplexity}
-//               onChange={(e) => setPost({ ...post, spaceComplexity: e.target.value })}
-//               required
-//               className="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
-//             />
-//           </div>
-//         </div>
-
-//         <div>
-//           <label htmlFor="leetCodeLink" className="block font-medium text-gray-700 dark:text-gray-300">
-//             LeetCode Link
-//           </label>
-//           <input
-//             id="leetCodeLink"
-//             type="url"
-//             value={post.leetCodeLink}
-//             onChange={(e) => setPost({ ...post, leetCodeLink: e.target.value })}
-//             required
-//             className="mt-1 p-2 w-full border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200"
-//           />
-//         </div>
-
-//         <button
-//           type="submit"
-//           className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-//         >
-//           Submit
-//         </button>
-//       </form>
-
-//       {successMessage && (
-//         <p className="mt-4 text-green-600 dark:text-green-400">{successMessage}</p>
-//       )}
-//       {errorMessage && (
-//         <p className="mt-4 text-red-600 dark:text-red-400">{errorMessage}</p>
-//       )}
-//     </div>
-//   );
-// }
+        {/* Main Form Section */}
+        <div className="z-10 -mt-9">
+          <AdminLeetCodeForm />
+        </div>
+      </div>
+    </div>
+  );
+}
